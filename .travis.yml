@@ -5,5 +5,5 @@ services:
 before_install:
     - docker build -t rmcaves/docker-react -f Dockerfile.dev .
 
-    script:
-        - docker run rmcaves/docker-react npm run test -- --coverage
+script:
+    - docker run -e CI=true USERNAME/docker-react npm run test
